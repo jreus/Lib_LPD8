@@ -1,0 +1,121 @@
+#N canvas 571 135 769 550 10;
+#X text 372 454 Input and mapping for the AKAI LPD8 laptop pad controller
+;
+#X obj 420 91 ctlin 1 1;
+#X obj 420 113 / 127;
+#X floatatom 446 135 5 0 0 0 - - -;
+#X text 419 75 K1;
+#X obj 483 113 / 127;
+#X floatatom 509 135 5 0 0 0 - - -;
+#X obj 546 113 / 127;
+#X floatatom 572 135 5 0 0 0 - - -;
+#X obj 609 113 / 127;
+#X floatatom 635 135 5 0 0 0 - - -;
+#X text 482 75 K2;
+#X text 545 75 K3;
+#X text 608 75 K4;
+#X obj 420 323 / 127;
+#X floatatom 446 345 5 0 0 0 - - -;
+#X obj 483 323 / 127;
+#X floatatom 509 345 5 0 0 0 - - -;
+#X obj 546 323 / 127;
+#X floatatom 572 345 5 0 0 0 - - -;
+#X obj 609 323 / 127;
+#X floatatom 635 345 5 0 0 0 - - -;
+#X obj 483 91 ctlin 2 1;
+#X obj 546 91 ctlin 3 1;
+#X obj 609 91 ctlin 4 1;
+#X obj 420 301 ctlin 5 1;
+#X obj 483 301 ctlin 6 1;
+#X obj 546 301 ctlin 7 1;
+#X obj 609 301 ctlin 8 1;
+#X text 419 285 K5;
+#X text 482 285 K6;
+#X text 545 285 K7;
+#X text 608 285 K8;
+#X obj 86 23 notein 1;
+#X floatatom 145 46 5 0 0 0 - - -;
+#X floatatom 187 46 5 0 0 0 - - -;
+#X obj 34 89 pack i i;
+#X obj 34 138 route 60 62 64 67 69 71 72 74;
+#X floatatom 199 89 5 0 0 0 - - -;
+#X text 90 102 pads have velocity but here they are used as toggles
+;
+#X obj 90 66 expr if ($f1 > 0 \, 1 \, 0);
+#X obj 34 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 38 168 P5;
+#X obj 175 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 196 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 218 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 239 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 259 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 282 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 303 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 178 168 P6;
+#X text 200 168 P7;
+#X text 222 168 P8;
+#X text 243 168 P1;
+#X text 263 168 P2;
+#X text 286 168 P3;
+#X text 307 168 P4;
+#X obj 35 251 s enable_autocomp;
+#X obj 608 193 s output_vol;
+#X obj 573 226 s set_mic_gain;
+#X obj 421 161 * 255;
+#X obj 421 183 s dmx_ch1;
+#X obj 491 184 * 255;
+#X obj 491 206 s dmx_ch2;
+#X obj 573 204 * 8;
+#X obj 608 162 * 4;
+#X obj 303 249 s testtone;
+#X text 14 352 The LPD8 must be set as the MIDI input device in PureData's
+settings. Use the PAD configuration.;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 60 0;
+#X connect 5 0 6 0;
+#X connect 5 0 62 0;
+#X connect 7 0 8 0;
+#X connect 7 0 64 0;
+#X connect 9 0 10 0;
+#X connect 9 0 65 0;
+#X connect 14 0 15 0;
+#X connect 16 0 17 0;
+#X connect 18 0 19 0;
+#X connect 20 0 21 0;
+#X connect 22 0 5 0;
+#X connect 23 0 7 0;
+#X connect 24 0 9 0;
+#X connect 25 0 14 0;
+#X connect 26 0 16 0;
+#X connect 27 0 18 0;
+#X connect 28 0 20 0;
+#X connect 33 0 34 0;
+#X connect 33 0 36 0;
+#X connect 33 1 35 0;
+#X connect 33 1 40 0;
+#X connect 36 0 37 0;
+#X connect 37 0 41 0;
+#X connect 37 1 43 0;
+#X connect 37 2 44 0;
+#X connect 37 3 45 0;
+#X connect 37 4 46 0;
+#X connect 37 5 47 0;
+#X connect 37 6 48 0;
+#X connect 37 7 49 0;
+#X connect 40 0 38 0;
+#X connect 40 0 36 1;
+#X connect 41 0 57 0;
+#X connect 49 0 66 0;
+#X connect 60 0 61 0;
+#X connect 62 0 63 0;
+#X connect 64 0 59 0;
+#X connect 65 0 58 0;
